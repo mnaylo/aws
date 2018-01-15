@@ -1,4 +1,4 @@
-# AWS_CFNs
+# AWS Cloudformation templates (CFN's)
 Personal AWS CFN templates for different types of projects that I am working on in AWS.
 
 Current list contains:
