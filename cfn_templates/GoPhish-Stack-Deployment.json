@@ -161,22 +161,30 @@
             }
          }
       },
-      "InstanceSecurityGroup":{  
-         "Type":"AWS::EC2::SecurityGroup",
-         "Properties":{  
-            "GroupDescription":"Enable SSH access",
-            "SecurityGroupIngress":[  
-               {  
-                  "IpProtocol":"tcp",
-                  "FromPort":"22",
-                  "ToPort":"22",
-                  "CidrIp":{  
-                     "Ref":"SSHLocation"
-                  }
-               }
-            ]
-         }
-      },
+    "InstanceSecurityGroup": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "allow connections from specified CIDR ranges",
+        "SecurityGroupIngress": [
+          {
+            "IpProtocol": "tcp",
+            "FromPort": "3333",
+            "ToPort": "3333",
+            "CidrIp": {
+              "Ref": "Location"
+            }
+          },
+          {
+            "IpProtocol": "tcp",
+            "FromPort": "22",
+            "ToPort": "22",
+            "CidrIp": {
+              "Ref": "Location"
+            }
+          }
+        ]
+      }
+    },
       "IPAddress":{  
          "Type":"AWS::EC2::EIP"
       },
