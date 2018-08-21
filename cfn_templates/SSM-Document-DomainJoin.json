@@ -1,0 +1,17 @@
+{
+        "schemaVersion": "1.0",
+        "description": "Join an instance to the Login domain",
+        "runtimeConfig": {
+           "aws:domainJoin": {
+               "properties": {
+                  "directoryId": "d-<AWS AD-Connector ID>",
+                  "directoryName": "<Domain Name>",
+                  "directoryOU": "<AD Distinguished Name (DN)>",
+                  "dnsIpAddresses": [
+                     "XXX.XXX.XXX.XXX",
+                     "XXX.XXX.XXX.XXX"
+                  ]
+               }
+           }
+        }
+}
